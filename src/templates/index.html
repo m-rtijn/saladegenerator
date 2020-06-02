@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Martijns saladegenerator</title>
+    <link rel="stylesheet" href="static/css/stylesheet.css">
+</head>
+<body>
+    <p>Martijns <b>saladegenerator</b> heeft voor jou een</p>
+
+    <h1 class="centerimg"><b>{{ leaf }}salade</b></h1>
+
+    <p>gegenereerd!</p>
+
+    <dl>
+        <dt>Bladgroente:</dt>
+        <dd>{{ leaf }}</dd>
+        <dt>Koolhydraat:</dt>
+        <dd>{{ carb }}</dd>
+        <dt>Eiwit:</dt>
+        <dd>{{ protein }}</dd>
+        <dt>Kruiden:</dt>
+        {% for item in herbs %}
+        <dd>{{ item }}</dd>
+        {% endfor %}
+        <dt>Extra:</dt>
+        {% for item in extra %}
+        <dd>{{ item }}</dd>
+        {% endfor %}
+        {% if dressing %}
+        <dt>Dressing:</dt>
+        <dd>{{ dressing.pop() }}</dd>
+        {% endif %}
+    </dl>
+
+    <button class="centerimg" onclick="window.location.href='/';">Genereer een nieuwe salade</button>
+
+    <footer>
+        <small>
+            Vragen, opmerkingen en suggesties kan je mailen naar <a href="mailto:martijn@mrtijn.nl">martijn@mrtijn.nl</a>.
+        </small>
+        <br>
+        <small>
+            De <a href="https://github.com/m-rtijn/ippls">code</a> voor deze
+            website is beschikbaar onder de voorwaarden van de
+            <a href="https://www.gnu.org/licenses/agpl-3.0.en.html">AGPLv3</a>,
+            of enige latere versie.
+        </small>
+    </footer>
+</body>
+</html>
